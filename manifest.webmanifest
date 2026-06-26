@@ -1,0 +1,25 @@
+{
+  "name": "The Topo",
+  "short_name": "The Topo",
+  "description": "Offline climbing topos — France & Spain",
+  "start_url": "/thetopo-web/",
+  "scope": "/thetopo-web/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#11151a",
+  "theme_color": "#11151a",
+  "icons": [
+    {
+      "src": "/thetopo-web/icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/thetopo-web/icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
