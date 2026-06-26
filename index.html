@@ -32,6 +32,29 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-  <script src="/thetopo-web/_expo/static/js/web/index-931e02d05990538d682bf64bb40d3b74.js" defer></script>
+  <div id="topo-gate" style="position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:#11151a;font-family:-apple-system,Segoe UI,Roboto,sans-serif">
+  <form id="topo-gate-form" style="width:280px;max-width:86vw;text-align:center">
+    <div style="font-size:40px;margin-bottom:8px">⛰️</div>
+    <div style="color:#fff;font-size:22px;font-weight:800;margin-bottom:14px">The Topo</div>
+    <input id="topo-gate-pw" type="password" placeholder="Password" autocomplete="current-password"
+      style="width:100%;box-sizing:border-box;background:#1d242c;border:1px solid #2c3742;border-radius:10px;color:#fff;font-size:16px;padding:12px 14px;outline:none" />
+    <button type="submit" style="width:100%;margin-top:10px;background:#4a9eff;border:0;border-radius:10px;color:#08121c;font-size:16px;font-weight:800;padding:12px;cursor:pointer">Enter</button>
+    <div id="topo-gate-err" style="color:#e06f4a;font-size:13px;margin-top:10px;display:none">Wrong password</div>
+  </form>
+</div>
+<script>
+(function(){
+  var SRC="/thetopo-web/_expo/static/js/web/index-bba3e0c43aec15f23b967672b809b114.js",HASH="907068a63e70aa4e89ba6b5322f55f2e8961647c6e5d4d91836da5bc7bac3006";
+  function load(){var s=document.createElement("script");s.src=SRC;s.defer=true;document.body.appendChild(s);var g=document.getElementById("topo-gate");if(g)g.remove();}
+  async function sha(t){var b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,"0")}).join("");}
+  if(sessionStorage.getItem("topo_ok")==="1"){load();return;}
+  document.getElementById("topo-gate-form").addEventListener("submit",async function(e){
+    e.preventDefault();
+    var h=await sha(document.getElementById("topo-gate-pw").value);
+    if(h===HASH){sessionStorage.setItem("topo_ok","1");load();}
+    else{document.getElementById("topo-gate-err").style.display="block";}
+  });
+})();
+</script>
 </body>
 </html>
