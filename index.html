@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="The Topo" />
   <link rel="apple-touch-icon" href="/thetopo-web/icon.png" />
-  <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/thetopo-web/sw.js",{scope:"/thetopo-web/"}).catch(function(){});});}</script>
+  <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/thetopo-web/sw.js",{scope:"/thetopo-web/"}).then(function(reg){reg.update();}).catch(function(){});});}</script>
 </head>
 
   <body>
@@ -52,7 +52,7 @@
 </div>
 <script>
 (function(){
-  var SRC="/thetopo-web/_expo/static/js/web/index-c0456a122e5de66dc6dbd6097505b29d.js",HASH="907068a63e70aa4e89ba6b5322f55f2e8961647c6e5d4d91836da5bc7bac3006";
+  var SRC="/thetopo-web/_expo/static/js/web/index-bf4e4d2bce19bccb3c2cefc57c255b20.js",HASH="907068a63e70aa4e89ba6b5322f55f2e8961647c6e5d4d91836da5bc7bac3006";
   function load(){var s=document.createElement("script");s.src=SRC;s.defer=true;document.body.appendChild(s);var g=document.getElementById("topo-gate");if(g)g.remove();}
   async function sha(t){var b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,"0")}).join("");}
   if(localStorage.getItem("topo_ok")==="1"){load();return;}
